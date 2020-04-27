@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <h2>leiste des inscrits pour le séminaire : {{ seminaire.cours.libelleCours }}</h2>
+    {% if employes == [] %}
+        <p>Aucun employé trouvé</p>
+    {% else %}
+        <ul>
+            {% for employe in employes %}
+                <li>{{ employe.nom }} <strong>{{  employe.prenom }}</strong> {{ employe.salaire }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

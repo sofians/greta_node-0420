@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% if employes == [] %}
+        <p>Aucun employé trouvé</p>
+    {% else %}
+        <ul>
+            {% for employe in employes %}
+                <li>{{ employe.nom }} <strong>{{  employe.prenom }}</strong> {{ employe.salaire }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

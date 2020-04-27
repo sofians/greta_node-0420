@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <h2 class="mb-4">Nombre d'emplés inscrits par séminaire</h2>
+    {% if seminaires == [] %}
+        <p style="color: red">Aucun séminaire trouvé</p>
+    {% else %}
+        <table class="table">
+            {% for seminaire in seminaires %}
+                <tr>
+                    <td>{{ seminaire.id }}</td>
+                    <td>{{  seminaire.cours.libelleCours }}</td>
+                    <td>{{ seminaire.employes | length }}</td>
+                </tr>
+
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}

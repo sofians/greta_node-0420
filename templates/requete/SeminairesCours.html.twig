@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% if seminaires == [] %}
+        <p>Aucun seminaires trouvé</p>
+    {% else %}
+        <ul>
+            {% for seminaire in seminaires %}
+                {% set d = '+' ~ (seminaire.cours.nbJours - 1) ~ ' day'%}
+                <li>id Seminaire : {{ seminaire.id }} Cours : {{ seminaire.cours.id }} - {{ seminaire.cours.libelleCours }} - debut : {{ seminaire.dateDebutSeminaire |date("d/m/Y") }} - fin: {{ seminaire.dateDebutSeminaire |date_modify(d)|date("d/m/Y") }} --- nbJour : {{  seminaire.cours.nbJours }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

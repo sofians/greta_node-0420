@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% if projets == [] %}
+        <p>Aucun employé trouvé</p>
+    {% else %}
+        <ul>
+            {% for projet in projets %}
+                <li>{{ projet.id }} <strong>{{  projet.nomProjet }}</strong> employes :  {{ projet.employes | length }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RequeteController!{% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="css/datepicker.css">
+    {% endblock %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+    {{ form_row(form.dateDebutSeminaire,{'attr' : {'type': 'date'}} ) }}
+
+    <div>
+        <p>
+            {% for cours in form.cours %}
+                {{ form_widget(cours) }}
+                {{ form_label(cours) }}
+                <br>
+            {% endfor %}
+        </p>
+    </div>
+    {{ form_end(form) }}
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="js/jquery.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+        });
+    </script>
+{% endblock %}
+
+

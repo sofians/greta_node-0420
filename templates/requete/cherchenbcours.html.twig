@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% if cours == [] %}
+        <p>Aucunn cours trouvé</p>
+    {% else %}
+    <ul>
+        {% for cour in cours %}
+            <li>{{ cour.libelleCours }} <strong>{{  cour.nbJours }}</strong></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endblock %}

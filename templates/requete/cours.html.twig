@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RequeteController!{% endblock %}
+
+{% block body %}
+
+{{  form_start(form) }}
+    {{ form_row(form.libelleCours) }}
+    {{ form_row(form.nbJours) }}
+    <div>
+        <p>
+            {%  for theme in form.lesThemes %}
+            {{  form_widget(theme) }}
+            {{ form_label(theme) }}
+            <br>
+            {%  endfor %}
+        </p>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

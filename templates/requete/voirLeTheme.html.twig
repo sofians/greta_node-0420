@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RequeteController!{% endblock %}
+
+{% block body %}
+    <h3>Le theme : </h3>
+    <card>
+
+        <div>
+            <table class="table text-center">
+                <thead>
+                    <td colspan="3">{{ theme.libelle  }}</td>
+                </thead>
+                {% if theme.cours is empty %}
+                <tr>
+                    <td colspan="3" style="color: red">Aucun cours</td>
+                </tr>
+                {% else %}
+                <thead>
+                    <td>id</td>
+                    <td>Libelle</td>
+                    <td>Nombre de jours</td>
+                </thead>
+                <tbody>
+                {% for cours in theme.cours %}
+                    <tr>
+                        <td>{{ cours.id }}</td>
+                        <td>{{ cours.libelleCours }}</td>
+                        <td>{{ cours.nbJours }}</td>
+                    </tr>
+
+                {% endfor %}
+                </tbody>
+                {% endif %}
+            </table>
+
+        </div>
+    </card>
+    <div class="mt-4">
+        <a href="/VoirTousLesTheme">Retour</a>
+    </div>
+
+{% endblock %}

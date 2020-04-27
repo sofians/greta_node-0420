@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/datepicker.css">
+    {% block stylesheets %}{% endblock %}
+</head>
+
+    <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="creerCours">Créer cours</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="creerSeminaire">Créer semainaire</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="seminaireNbInscrits">Inscrits par séminaire</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="VoirTousLesTheme">Thème</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <div class="container" style="margin-top: 100px">
+    {% block body %}
+
+    {% endblock %}
+    </div>
+    {% block javascripts %}{% endblock %}
+    <script src="js/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="js/datepicker.js"></script>
+
+
+
+</html>

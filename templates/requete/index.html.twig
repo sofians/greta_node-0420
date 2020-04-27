@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RequeteController!{% endblock %}
+
+{% block body %}
+    <ul>
+        {% for projet in projets %}
+            <li>{{ projet.nomProjet }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
